@@ -37,7 +37,7 @@ def get_item(request, id):
     
             
 
-def items_list(request):
+def get_items(request):
     items = Item.objects.all()
     context = {'items':items}
     return render(request, 'items.html', context)
