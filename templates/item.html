@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{%block header%}
+    <header>
+        / <a href= "{% url 'home' %}"> Home </a> /  <a href= "{%url 'about'%}"> About</a>
+    </header>
+    {% include "header.html" %}
+{%endblock%}
+{% block content%}
+    <h2> Имя: {{ item.name }} </h2>
+    {% if item.count == 0 %}
+        Количество: Товар отсутствует
+    {% else %}
+        Количество: {{ item.count }}
+    {% endif %}
+<P><a href={% url 'items'%}> Назад к списку товаров </a></p> 
+{%endblock%}
+{% block footer %} {% include "footer.html" %} {% endblock footer %}
